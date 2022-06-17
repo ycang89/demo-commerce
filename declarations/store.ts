@@ -3,5 +3,7 @@ export type Country = {
     label: string,
     currency: string,
     code: CountryCode,
-    exchangeRate: number
+    exchangeRate: number,
+    secretApiKey: string,
+    storeId: string;
 }

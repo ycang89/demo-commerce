@@ -18,7 +18,7 @@ const Index: NextPage = () => {
     if (id) {
       loadProductById(id);
     }
-  }, [id]);
+  }, [loadProductById, id]);
 
   if (!product) return null;
 
@@ -39,7 +39,7 @@ const Index: NextPage = () => {
           </Typography>
           <br />
           <Button color="primary" variant="contained" size="large">
-            Add to cart
+            Checkout with Ablr
           </Button>
         </Grid>
         <Grid item xs={12} md={5}>

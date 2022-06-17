@@ -4,26 +4,26 @@ import Layout from "@/components/Layout";
 import ProductItem from "@/components/ProductItem";
 import { useEffect } from "react";
 import productModel from "@/services/models/product";
-
+import { Product } from "@/declarations/products";
 const Home: NextPage = () => {
   const { loadProducts, products } = productModel();
 
   useEffect(() => {
     loadProducts();
-  }, []);
+  });
 
   return (
     <Layout>
       <Grid container spacing={4} justifyContent="center">
         {products.length > 0
-          ? products.map(({ title, price, image, id, currency }) => (
-              <Grid item key={id}>
+          ? products.map((product: Product) => (
+              <Grid item key={product.id}>
                 <ProductItem
-                  currency={currency}
-                  id={id}
-                  name={title}
-                  image={image}
-                  price={price}
+                  currency={product.currency}
+                  id={product.id}
+                  name={product.title}
+                  image={product.image}
+                  price={product.price}
                 />
               </Grid>
             ))

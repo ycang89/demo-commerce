@@ -4,12 +4,18 @@ import { baseApi } from "./base";
 
 export const productApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
-    getProducts: builder.query<(Product | null)[], void>({
+    getProducts: builder.query<Product[], void>({
       query: () => "/products",
       providesTags: (result) => (result ? [{ type: "Products" }] : []),
       transformResponse: (response: ResponseProduct[]) => {
         return response.length > 0
-          ? response.map((product) => toProductWithCurrency(product))
+          ? response.map((product: ResponseProduct) => {
+              const data = toProductWithCurrency(product);
+              if (data) {
+                return data;
+              }
+              return product;
+            })
           : [];
       },
     }),
