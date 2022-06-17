@@ -33,7 +33,7 @@ export default function Index({
         ) : null}
         <ProductItemName align="center">{name}</ProductItemName>
         <Typography variant="body2" align="center">
-          {currency} {price}
+          {currency} {price.toFixed(2)}
         </Typography>
       </ProductItemBox>
     </Link>

@@ -8,7 +8,7 @@ export default function Index({ children }) {
     <>
       <Header />
       <CssBaseline />
-      <Container sx={{ marginTop: 10 }} maxWidth="md">{children}</Container>
+      <Container sx={{ marginTop: 10, marginBottom: 10 }} maxWidth="md">{children}</Container>
     </>
   );
 }
