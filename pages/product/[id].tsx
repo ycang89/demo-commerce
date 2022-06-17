@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Grid from "@mui/material/Grid";
 import Layout from "@/components/Layout";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { Typography, Button } from "@mui/material";
 import Rating from "@mui/material/Rating";

@@ -3,13 +3,18 @@ import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import CurrencyExchangeIcon from "@mui/icons-material/CurrencyExchange";
+import storeModel from "@/services/models/store";
+import { CountryLabel } from "./styled";
 
 export default function Index() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
+  const { country, countries, changeCountry } = storeModel();
+
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
+
   const handleClose = () => {
     setAnchorEl(null);
   };
@@ -17,7 +22,7 @@ export default function Index() {
   return (
     <div>
       <Button id="basic-button" onClick={handleClick}>
-        <CurrencyExchangeIcon />
+        <CountryLabel>{country.label}</CountryLabel> <CurrencyExchangeIcon />
       </Button>
       <Menu
         id="basic-menu"
@@ -25,8 +30,14 @@ export default function Index() {
         open={open}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose}>Malaysia</MenuItem>
-        <MenuItem onClick={handleClose}>Singapore</MenuItem>
+        {countries.map((country) => (
+          <MenuItem
+            key={country.code}
+            onClick={changeCountry.bind(this, country.code)}
+          >
+            {country.label}
+          </MenuItem>
+        ))}
       </Menu>
     </div>
   );
