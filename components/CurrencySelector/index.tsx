@@ -21,8 +21,8 @@ export default function Index() {
 
   return (
     <div>
-      <Button id="basic-button" onClick={handleClick}>
-        <CountryLabel>{country.label}</CountryLabel> <CurrencyExchangeIcon />
+      <Button id="basic-button" onClick={handleClick} data-cy="switch-country-btn">
+        <CountryLabel data-cy="country-label">{country.label}</CountryLabel> <CurrencyExchangeIcon />
       </Button>
       <Menu
         id="basic-menu"
@@ -34,6 +34,7 @@ export default function Index() {
           <MenuItem
             key={country.code}
             onClick={changeCountry.bind(this, country.code)}
+            data-cy="country-selection"
           >
             {country.label}
           </MenuItem>

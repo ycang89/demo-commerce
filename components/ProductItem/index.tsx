@@ -19,7 +19,7 @@ export default function Index({
 }) {
   return (
     <Link href={`/product/${id}`}>
-      <ProductItemBox>
+      <ProductItemBox data-cy="product-item">
         {image ? (
           <ProductImageWrapper>
             <Image
@@ -33,7 +33,7 @@ export default function Index({
         ) : null}
         <ProductItemName align="center">{name}</ProductItemName>
         <Typography variant="body2" align="center">
-          {currency} {price.toFixed(2)}
+          <span data-cy="product-currency">{currency}</span> {price.toFixed(2)}
         </Typography>
       </ProductItemBox>
     </Link>

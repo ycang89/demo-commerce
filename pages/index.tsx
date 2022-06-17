@@ -6,17 +6,20 @@ import ProductItem from "@/components/ProductItem";
 import { useEffect } from "react";
 import productModel from "@/services/models/product";
 import { Product } from "@/declarations/products";
+import { CircularProgress } from "@mui/material";
 const Home: NextPage = () => {
-  const { loadProducts, products } = productModel();
+  const { loadProducts, products, isLoadingProducts } = productModel();
 
   useEffect(() => {
     loadProducts();
-  });
+  }, []);
 
   return (
     <Layout>
       <Grid container spacing={4} justifyContent="center">
-        {products.length > 0 ? (
+        {isLoadingProducts ? (
+          <CircularProgress />
+        ) : products.length > 0 ? (
           products.map((product: Product) => (
             <Grid item key={product.id}>
               <ProductItem

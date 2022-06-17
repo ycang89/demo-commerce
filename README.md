@@ -18,6 +18,14 @@ You can start editing the page by modifying `pages/index.tsx`. The page auto-upd
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
+## Cypress Testing
+Run single spec file
+
+```bash
+npm run cy:run -- --record --spec "cypress/e2e/my-spec.cy.js"
+```
+
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

@@ -27,7 +27,7 @@ const Index: NextPage = () => {
       <Grid container>
         {product ? (
           <>
-            <Grid item xs={12} md={7}>
+            <Grid item xs={12} md={7} data-cy="product-content">
               <Typography variant="h4" component="h1" fontWeight="bold">
                 {product.title}
               </Typography>
