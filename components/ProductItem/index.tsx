@@ -7,11 +7,13 @@ import { ProductItemBox, ProductItemName, ProductImageWrapper } from "./styled";
 export default function Index({
   name,
   price,
+  currency,
   image,
   id,
 }: {
   name: string;
   price: number;
+  currency: string;
   image: string;
   id: number;
 }) {
@@ -31,7 +33,7 @@ export default function Index({
         ) : null}
         <ProductItemName align="center">{name}</ProductItemName>
         <Typography variant="body2" align="center">
-          {price}
+          {currency} {price}
         </Typography>
       </ProductItemBox>
     </Link>

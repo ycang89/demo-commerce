@@ -32,7 +32,7 @@ const Index: NextPage = () => {
           <Rating readOnly value={product.stars} />
           <br />
           <Typography variant="body2" paragraph>
-            {product.price}
+            {product.currency} {product.price}
           </Typography>
           <Typography variant="body1" paragraph>
             {product.description}

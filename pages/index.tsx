@@ -16,9 +16,15 @@ const Home: NextPage = () => {
     <Layout>
       <Grid container spacing={4} justifyContent="center">
         {products.length > 0
-          ? products.map(({ title, price, image, id }) => (
+          ? products.map(({ title, price, image, id, currency }) => (
               <Grid item key={id}>
-                <ProductItem id={id} name={title} image={image} price={price} />
+                <ProductItem
+                  currency={currency}
+                  id={id}
+                  name={title}
+                  image={image}
+                  price={price}
+                />
               </Grid>
             ))
           : null}
