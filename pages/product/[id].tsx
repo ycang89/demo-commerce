@@ -5,25 +5,18 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { Typography, Button } from "@mui/material";
 import Rating from "@mui/material/Rating";
-import { Product } from "@/declarations/products";
 import Image from "next/image";
 import { ProductImageWrapper } from "./styled";
+import productModel from "@/services/models/product";
 
-const Index: NextPage = (props) => {
-  const [product, setProduct] = useState<Product>();
+const Index: NextPage = () => {
   const router = useRouter();
   const { id } = router.query;
-
-  const contentFetch = async () => {
-    const { id } = router.query;
-    const res = await fetch(`/api/products/${id}`);
-    const data = await res.json();
-    setProduct(data);
-  };
+  const { loadProductById, product } = productModel();
 
   useEffect(() => {
     if (id) {
-      contentFetch();
+      loadProductById(id);
     }
   }, [id]);
 
@@ -45,11 +38,7 @@ const Index: NextPage = (props) => {
             {product.description}
           </Typography>
           <br />
-          <Button
-            color="primary"
-            variant="contained"
-            size="large"
-          >
+          <Button color="primary" variant="contained" size="large">
             Add to cart
           </Button>
         </Grid>

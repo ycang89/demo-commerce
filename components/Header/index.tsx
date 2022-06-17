@@ -2,33 +2,29 @@ import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
 import CurrencySelector from "@/components/CurrencySelector";
 import Link from "next/link";
+import ImgLogo from "@/public/logo.png";
+import Image from "next/image";
+import { LogoWrapper, LogoImageWrapper } from "./styled";
 
 export default function Index() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" color="transparent">
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Link href="/">
-            <a style={{ flexGrow: 1, textAlign: 'center' }}>
-              <Typography variant="h6" component="div">
-                DEMOSTORE
-              </Typography>
-            </a>
-          </Link>
+          <LogoWrapper>
+            <Link href="/">
+              <LogoImageWrapper>
+                <Image
+                  src={ImgLogo}
+                  alt="logo"
+                  width="118px"
+                  height="50"
+                />
+              </LogoImageWrapper>
+            </Link>
+          </LogoWrapper>
           <CurrencySelector />
         </Toolbar>
       </AppBar>

@@ -2,19 +2,14 @@ import type { NextPage } from "next";
 import Grid from "@mui/material/Grid";
 import Layout from "@/components/Layout";
 import ProductItem from "@/components/ProductItem";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import productModel from "@/services/models/product";
 
 const Home: NextPage = () => {
-  const [products, setProducts] = useState([]);
-
-  const contentFetch = async () => {
-    const res = await fetch("/api/products");
-    const data = await res.json();
-    setProducts(data);
-  };
+  const { loadProducts, products } = productModel();
 
   useEffect(() => {
-    contentFetch();
+    loadProducts();
   }, []);
 
   return (

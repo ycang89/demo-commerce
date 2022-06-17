@@ -17,7 +17,7 @@ export default function Index() {
   return (
     <div>
       <Button id="basic-button" onClick={handleClick}>
-        <CurrencyExchangeIcon style={{ color: '#fff' }} />
+        <CurrencyExchangeIcon />
       </Button>
       <Menu
         id="basic-menu"
