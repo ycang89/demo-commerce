@@ -11,7 +11,7 @@ import Link from "next/link";
 export default function Index() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="static" color="transparent">
         <Toolbar>
           <IconButton
             size="large"

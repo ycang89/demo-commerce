@@ -45,7 +45,11 @@ const Index: NextPage = (props) => {
             {product.description}
           </Typography>
           <br />
-          <Button type="primary" variant="contained" size="large">
+          <Button
+            color="primary"
+            variant="contained"
+            size="large"
+          >
             Add to cart
           </Button>
         </Grid>
