@@ -22,10 +22,13 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 Run single spec file
 
 ```bash
-npm run cy:run -- --record --spec "cypress/e2e/my-spec.cy.js"
+yarn cy:run -- --record --spec "cypress/e2e/my-spec.cy.js"
 ```
 
-
+To see code coverage
+```bash
+yarn open:coverage
+```
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

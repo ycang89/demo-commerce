@@ -9,9 +9,12 @@
     "lint": "next lint",
     "test": "next dev && cy:open",
     "cy:open": "cypress open",
-    "cy:run": "cypress run"
+    "cy:run": "cypress run",
+    "coverage": "nyc report --reporter=lcov",
+    "open:coverage": "open coverage/lcov-report/index.html"
   },
   "dependencies": {
+    "@cypress/code-coverage": "^3.10.0",
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
     "@mui/icons-material": "^5.8.4",
@@ -28,6 +31,7 @@
     "@types/node": "18.0.0",
     "@types/react": "18.0.13",
     "@types/react-dom": "18.0.5",
+    "babel-plugin-istanbul": "^6.1.1",
     "cypress": "^10.1.0",
     "eslint": "8.17.0",
     "eslint-config-next": "12.1.6",

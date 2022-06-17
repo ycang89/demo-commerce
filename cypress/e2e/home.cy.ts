@@ -1,6 +1,6 @@
 describe("Home Page", () => {
   beforeEach(() => {
-    cy.visit("http://localhost:3000");
+    cy.visit("/");
   });
   it("product listing should loaded", () => {
     cy.intercept("GET", "/api/products").as("getProducts");
