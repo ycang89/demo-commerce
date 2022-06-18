@@ -3,6 +3,7 @@ import { Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import { ProductItemBox, ProductItemName, ProductImageWrapper } from "./styled";
+import { toPriceWithTwoDecimal } from "@/utils/adapters/products";
 
 export default function Index({
   name,
@@ -33,7 +34,8 @@ export default function Index({
         ) : null}
         <ProductItemName align="center">{name}</ProductItemName>
         <Typography variant="body2" align="center">
-          <span data-cy="product-currency">{currency}</span> {price.toFixed(2)}
+          <span data-cy="product-currency">{currency}</span>{" "}
+          {toPriceWithTwoDecimal(price)}
         </Typography>
       </ProductItemBox>
     </Link>

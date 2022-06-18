@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { CountryCode } from "@/declarations/store";
 import { countries } from "@/constants/index";
 import { useDispatch, useSelector } from "react-redux";
-import { setCountry, uiAppSelectors } from "@/services/redux/slices/uiApp";
+import { setCountry, uiAppSelector } from "@/services/redux/slices/uiApp";
 import { getCountryFromLocalStorage } from "@/utils/getCountry";
 
 const Index = () => {
@@ -12,7 +12,7 @@ const Index = () => {
 
   useEffect(() => {
     dispatch(setCountry(getCountryFromLocalStorage()));
-  });
+  }, []);
 
   const changeCountry = (code: CountryCode) => {
     localStorage.setItem("country_code", code);
@@ -21,7 +21,7 @@ const Index = () => {
 
   return {
     countries,
-    country: useSelector(uiAppSelectors.country),
+    country: useSelector(uiAppSelector.country),
     changeCountry,
   };
 };

@@ -3,7 +3,7 @@ import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import CurrencyExchangeIcon from "@mui/icons-material/CurrencyExchange";
-import storeModel from "@/services/models/store";
+import storeModel from "@/models/store";
 import { CountryLabel } from "./styled";
 
 export default function Index() {

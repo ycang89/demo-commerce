@@ -31,6 +31,6 @@ const country = createSelector(
   (uiApp: UiAppState) => uiApp.country
 );
 
-export const uiAppSelectors = { country };
+export const uiAppSelector = { country };
 
 export default uiApp.reducer;

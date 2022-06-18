@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import data from "@/mockData/products";
+import data from "@/mocks/products";
 import { Product } from "@/declarations/products";
 
 export default function handler(

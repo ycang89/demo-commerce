@@ -1,7 +1,8 @@
 import { Product, ResponseProduct } from "@/declarations/products";
 import { Country } from "@/declarations/store";
 import { getCountryFromLocalStorage } from "@/utils/getCountry";
-import _isEmpty from 'lodash/isEmpty'
+import _isEmpty from "lodash/isEmpty";
+
 export const toProductWithCurrency = (
   product: ResponseProduct
 ): Product | null => {
@@ -17,4 +18,10 @@ export const toProductWithCurrency = (
     price: newPrice,
     currency: country.currency,
   };
+};
+
+export const toPriceWithTwoDecimal = (price: string | number) => {
+  if (!price) return '';
+  const finalPrice = typeof price === "string" ? parseFloat(price) : price;
+  return finalPrice.toFixed(2);
 };

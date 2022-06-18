@@ -4,11 +4,11 @@ import Typography from "@mui/material/Typography";
 import Layout from "@/components/Layout";
 import ProductItem from "@/components/ProductItem";
 import { useEffect } from "react";
-import productModel from "@/services/models/product";
+import catalogModel from "@/models/catalog";
 import { Product } from "@/declarations/products";
 import { CircularProgress } from "@mui/material";
 const Home: NextPage = () => {
-  const { loadProducts, products, isLoadingProducts } = productModel();
+  const { loadProducts, products, isLoadingProducts } = catalogModel();
 
   useEffect(() => {
     loadProducts();

@@ -7,9 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "next dev && cy:open",
+    "test": "yarn dev & yarn cy:run",
     "cy:open": "cypress open",
-    "cy:run": "cypress run",
+    "cy:run": "cypress run --browser chrome --record=false ",
     "coverage": "nyc report --reporter=lcov",
     "open:coverage": "open coverage/lcov-report/index.html"
   },
@@ -28,6 +28,7 @@
     "react-redux": "^8.0.2"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.182",
     "@types/node": "18.0.0",
     "@types/react": "18.0.13",
     "@types/react-dom": "18.0.5",
