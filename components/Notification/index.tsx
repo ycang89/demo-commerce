@@ -57,7 +57,7 @@ export default function Index() {
       onClose={handleClose}
       anchorOrigin={{ vertical: "top", horizontal: "right" }}
     >
-      <Alert onClose={handleClose} severity={severity} sx={{ width: "100%" }}>
+      <Alert onClose={handleClose} severity={severity} sx={{ width: "100%" }} data-cy="notification">
         {message}
       </Alert>
     </Snackbar>

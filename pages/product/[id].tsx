@@ -58,6 +58,7 @@ const Index: NextPage = () => {
                   this,
                   toPriceWithTwoDecimal(product.price)
                 )}
+                data-cy="checkout-button"
               >
                 Checkout with Ablr
               </Button>

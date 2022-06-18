@@ -1,0 +1,10 @@
+{
+    "success": false,
+    "data": null,
+    "message": null,
+    "errors": {
+        "amount": [
+            "This field is required."
+        ]
+    }
+}

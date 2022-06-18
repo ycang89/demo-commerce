@@ -1,0 +1,17 @@
+{
+    "success": true,
+    "data": {
+        "id": "CKT-DAJQ97WMRN8",
+        "checkout_url": "https://backend.uat.ablr.com/v2/magic/ckt/CKT-DAJQ97WMRN8/",
+        "store_id": "MY-S-3B7VWDJVBTDR",
+        "amount": "1.00",
+        "merchant_reference_id": "",
+        "redirect_url": "",
+        "source": "api",
+        "expires_at": null,
+        "created_at": "2022-06-19T00:46:36.780378+08:00",
+        "updated_at": "2022-06-19T00:46:36.780403+08:00"
+    },
+    "message": null,
+    "errors": null
+}
