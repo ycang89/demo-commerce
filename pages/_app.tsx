@@ -4,6 +4,10 @@ import Head from "next/head";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { store } from '@/services/redux/store';
 import { Provider } from "react-redux";
+import Notification from "@/components/Notification";
+import eventEmitter from "@/services/eventEmitter";
+
+eventEmitter.getInstance();
 
 const theme = createTheme({
   palette: {
@@ -29,6 +33,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <Provider store={store}>
         <ThemeProvider theme={theme}>
+          <Notification />
           <Component {...pageProps} />
         </ThemeProvider>
       </Provider>

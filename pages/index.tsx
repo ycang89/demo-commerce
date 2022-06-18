@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import catalogModel from "@/models/catalog";
 import { Product } from "@/declarations/products";
 import { CircularProgress } from "@mui/material";
+
 const Home: NextPage = () => {
   const { loadProducts, products, isLoadingProducts } = catalogModel();
 

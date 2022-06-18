@@ -1,10 +1,13 @@
 import { orderApi } from "@/services/redux/apis/order";
 import storeModel from "./store";
 import _get from "lodash/get";
+import eventEmitter, { EVENTS } from "@/services/eventEmitter";
+import _isEmpty from "lodash/isEmpty";
 const Index = () => {
   const [checkout, { isLoading: isLoadingMakePayment }] =
     orderApi.useCheckoutMutation();
   const { country } = storeModel();
+  const emitter = eventEmitter.getInstance();
 
   const makePayment = async (amount: string) => {
     checkout({ store_id: country.storeId, amount })
@@ -14,6 +17,18 @@ const Index = () => {
           const checkoutUrl = _get(res, "data.checkout_url");
           if (checkoutUrl) {
             document.location.href = checkoutUrl;
+          }
+        }
+      })
+      .catch((res) => {
+        const errors = _get(res, "data.errors", {});
+        if (!_isEmpty(errors)) {
+          let errorMessages = "";
+          for (let key in errors) {
+            errorMessages += `"${key}" - ${errors[key]}. `;
+          }
+          if (errorMessages) {
+            emitter.emit(EVENTS.TOAST_ERROR, errorMessages);
           }
         }
       });
