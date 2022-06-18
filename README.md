@@ -2,10 +2,10 @@
     - Typescript
     - Nextjs
     - Material UI
-    - Redux (Redux RTK & Query)  
+    - Redux (Redux RTK & Query)
     - Cypress
-    
-## File Structure    
+
+## File Structure
     ├── components              # reusable UI components
     ├── constants               # app-wide constants
     ├── coverage                # test coverage
@@ -16,7 +16,7 @@
     ├── mocks                   # mock data
     ├── models                  # application models which handling business logics
     ├── pages                   # ui pages
-        ├── api                 # mock api provided by nextjs (https://nextjs.org/docs/api-routes/introduction) 
+        ├── api                 # mock api provided by nextjs (https://nextjs.org/docs/api-routes/introduction)
     ├── public                  # public assets files
     ├── services                # services
         ├── redux
@@ -30,12 +30,13 @@
 
 ## Getting Started
 First, run the development server:
-```bash 
+```bash
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.  
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 ## Cypress Testing
+Do not forget start th development server before running test
 Run test
 ```bash
 yarn test
@@ -46,7 +47,7 @@ Run single spec file
 yarn cy:run --spec "cypress/e2e/home.cy.ts"
 ```
 
-To see code coverage
+To see code coverage after running test
 ```bash
 yarn open:coverage
 ```

@@ -20,7 +20,7 @@ export const toProductWithCurrency = (
   };
 };
 
-export const toPriceWithTwoDecimal = (price: string | number) => {
+export const toPriceWithTwoDecimal = (price: string | number): string => {
   if (!price) return '';
   const finalPrice = typeof price === "string" ? parseFloat(price) : price;
   return finalPrice.toFixed(2);

@@ -7,9 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "yarn dev & yarn cy:run",
     "cy:open": "cypress open",
-    "cy:run": "cypress run --browser chrome --record=false ",
+    "cy:run": "cypress run --browser chrome",
+    "test": "cypress run --browser chrome --record=false",
     "coverage": "nyc report --reporter=lcov",
     "open:coverage": "open coverage/lcov-report/index.html"
   },
