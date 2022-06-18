@@ -31,7 +31,7 @@ const Index: NextPage = () => {
 
   return (
     <Layout>
-      <Grid container>
+      <Grid container flexDirection={{ xs: "column-reverse", md: "row" }}>
         {isLoadingProduct ? (
           <CircularProgress />
         ) : product && !_isEmpty(product) ? (
