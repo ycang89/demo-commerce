@@ -9,6 +9,7 @@ import Rating from "@mui/material/Rating";
 import Image from "next/image";
 import { ProductImageWrapper } from "./styled";
 import catalogModel from "@/models/catalog";
+import orderModel from "@/models/order";
 import { toPriceWithTwoDecimal } from "@/utils/adapters/products";
 import _isEmpty from "lodash/isEmpty";
 
@@ -16,12 +17,17 @@ const Index: NextPage = () => {
   const router = useRouter();
   const { id } = router.query;
   const { loadProductById, product, isLoadingProduct } = catalogModel();
+  const { isLoadingMakePayment, makePayment } = orderModel();
 
   useEffect(() => {
     if (id) {
       loadProductById(id);
     }
   }, [id]);
+
+  const onClickCheckout = (amount: string) => {
+    makePayment(amount);
+  };
 
   return (
     <Layout>
@@ -43,7 +49,16 @@ const Index: NextPage = () => {
                 {product.description}
               </Typography>
               <br />
-              <Button color="primary" variant="contained" size="large">
+              <Button
+                disabled={isLoadingMakePayment}
+                color="primary"
+                variant="contained"
+                size="large"
+                onClick={onClickCheckout.bind(
+                  this,
+                  toPriceWithTwoDecimal(product.price)
+                )}
+              >
                 Checkout with Ablr
               </Button>
             </Grid>

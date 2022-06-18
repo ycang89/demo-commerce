@@ -12,7 +12,7 @@ const initialState: UiAppState = {
 };
 
 export const uiApp = createSlice({
-  name: "loading",
+  name: "uiApp",
   initialState,
   reducers: {
     setCountry: (state, action) => {
