@@ -36,7 +36,7 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 ## Cypress Testing
-Do not forget start th development server before running test
+Do not forget start the development server before running test
 Run test
 ```bash
 yarn test
