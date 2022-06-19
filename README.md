@@ -51,6 +51,10 @@ To see code coverage after running test
 ```bash
 yarn open:coverage
 ```
+
+##
+![alt text](https://github.com/ycang89/demo-ecommerce/blob/main/architecture-layers.png?raw=true)
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
