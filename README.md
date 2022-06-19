@@ -30,7 +30,12 @@
 
 
 ## Getting Started
-First, run the development server:
+First, install packages:
+```bash
+yarn install
+```
+
+run the development server:
 ```bash
 yarn dev
 ```
@@ -38,17 +43,17 @@ yarn dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 ## Cypress Testing
 Do not forget start the development server before running test
-Run test
+Run test:
 ```bash
 yarn test
 ```
 
-Run single spec file
+Run single spec file:
 ```bash
 yarn cy:run --spec "cypress/e2e/home.cy.ts"
 ```
 
-To see code coverage after running test
+To see code coverage after running test, not support for window machine:
 ```bash
 yarn open:coverage
 ```
