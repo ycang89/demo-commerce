@@ -6,8 +6,10 @@ import { store } from "@/services/redux/store";
 import { Provider as ReduxProdvider } from "react-redux";
 import Notification from "@/components/Notification";
 import eventEmitter from "@/services/eventEmitter";
+import logRocket from '@/services/logRocket';
 
 eventEmitter.getInstance();
+logRocket.getInstance()
 
 const theme = createTheme({
   palette: {

@@ -8,6 +8,7 @@ export const EVENTS = {
 const EventEmitter = () => {
   let instance: any = null;
   function initialize() {
+    // @ts-ignore
     const eventEmitter2Instance = new EventEmitter2({
       // set this to `true` to use wildcards
       wildcard: true,

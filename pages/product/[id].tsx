@@ -7,11 +7,17 @@ import { Typography, Button } from "@mui/material";
 import { CircularProgress } from "@mui/material";
 import Rating from "@mui/material/Rating";
 import Image from "next/image";
-import { ProductImageWrapper } from "./styled";
 import catalogModel from "@/models/catalog";
 import orderModel from "@/models/order";
 import { toPriceWithTwoDecimal } from "@/utils/adapters/products";
 import _isEmpty from "lodash/isEmpty";
+import { styled } from "@mui/material/styles";
+
+export const ProductImageWrapper = styled("div")(() => ({
+  position: "relative",
+  minHeight: 400,
+  marginBottom: 8,
+}));
 
 const Index: NextPage = () => {
   const router = useRouter();
@@ -20,8 +26,8 @@ const Index: NextPage = () => {
   const { isLoadingMakePayment, makePayment } = orderModel();
 
   useEffect(() => {
-    if (id) {
-      loadProductById(id);
+    if (typeof id === "string" && id) {
+      loadProductById(parseInt(id));
     }
   }, [id]);
 

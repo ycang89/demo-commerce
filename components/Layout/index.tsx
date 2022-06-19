@@ -3,12 +3,14 @@ import Header from "@/components/Header";
 import CssBaseline from "@mui/material/CssBaseline";
 import Container from "@mui/material/Container";
 
-export default function Index({ children }) {
+export default function Index({ children }: { children: any }) {
   return (
     <>
       <Header />
       <CssBaseline />
-      <Container sx={{ marginTop: 10, marginBottom: 10 }} maxWidth="md">{children}</Container>
+      <Container sx={{ marginTop: 10, marginBottom: 10 }} maxWidth="md">
+        {children}
+      </Container>
     </>
   );
 }

@@ -5,11 +5,7 @@ export const logger: Middleware = (api: MiddlewareAPI) => (next) => (action) => 
     if (isRejectedWithValue(action)) {
         const errorMessage = _get(action, 'payload.data');
         const statusCode: number = _get(action, 'payload.status');
-        if (statusCode === 400) {
-        }
-        // if (errorMessage?.message) {
-        //     rollbar.pushError(errorMessage.message);
-        // }
+        // can add to logrocket event
     }
     return next(action);
 };

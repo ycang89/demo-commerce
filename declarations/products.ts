@@ -5,7 +5,6 @@ export interface ResponseProduct {
   description: string,
   price: number,
   stars: number,
-  currency: string,
 };
 
 export interface Product extends ResponseProduct {

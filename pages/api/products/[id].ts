@@ -7,6 +7,8 @@ export default function handler(
   res: NextApiResponse<Product | {}>
 ) {
   const { id }  = req.query;
-  const product = data.find((product) => product.id === parseInt(id));
-  res.status(200).json(product ? product : {});
+  if (typeof id === 'string') {
+    const product = data.find((product) => product.id === parseInt(id));
+    res.status(200).json(product ? product : {});
+  }
 }

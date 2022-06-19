@@ -33,7 +33,7 @@ export default function Index() {
         {countries.map((country) => (
           <MenuItem
             key={country.code}
-            onClick={changeCountry.bind(this, country.code)}
+            onClick={() => changeCountry(country.code)}
             data-cy="country-selection"
           >
             {country.label}
