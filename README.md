@@ -52,7 +52,7 @@ To see code coverage after running test
 yarn open:coverage
 ```
 
-##
+## Architecture Layers
 ![alt text](https://github.com/ycang89/demo-ecommerce/blob/main/architecture-layers.png?raw=true)
 
 ## Learn More
