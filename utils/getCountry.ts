@@ -1,4 +1,4 @@
-import { countries } from "@/constants";
+import { countries } from "@/configs";
 
 export const getCountryFromLocalStorage = () => {
   if (localStorage.getItem("country_code")) {

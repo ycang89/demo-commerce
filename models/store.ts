@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { CountryCode } from "@/declarations/store";
-import { countries } from "@/constants/index";
+import { countries } from "@/configs/index";
 import { useDispatch, useSelector } from "react-redux";
 import { setCountry, uiAppSelector } from "@/services/redux/slices/uiApp";
 import { getCountryFromLocalStorage } from "@/utils/getCountry";

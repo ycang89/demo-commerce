@@ -7,7 +7,7 @@
 
 ## File Structure
     ├── components              # reusable UI components
-    ├── constants               # app-wide constants
+    ├── configs                 # app-wide configs
     ├── coverage                # test coverage
     ├── cypress                 # testing solution
         ├── e2e                 # e2e test suite

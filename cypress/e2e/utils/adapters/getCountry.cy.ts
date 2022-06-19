@@ -1,5 +1,5 @@
 import { getCountryFromLocalStorage } from '@/utils/getCountry';
-import { countries } from "@/constants/index";
+import { countries } from "@/configs/index";
 
 describe('getCountryFromLocalStorage', () => {
   it.only('should return SG country details when "country_code" doesnt exist in browser local storage', () => {

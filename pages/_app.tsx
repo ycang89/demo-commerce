@@ -2,10 +2,12 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { store } from '@/services/redux/store';
-import { Provider } from "react-redux";
+import { store } from "@/services/redux/store";
+import { Provider as ReduxProdvider } from "react-redux";
 import Notification from "@/components/Notification";
 import eventEmitter from "@/services/eventEmitter";
+import { Provider as RollbarProvider } from "@rollbar/react";
+import rollbarConfig from '@/configs/rollbar';
 
 eventEmitter.getInstance();
 
@@ -21,6 +23,7 @@ const theme = createTheme({
 });
 
 function MyApp({ Component, pageProps }: AppProps) {
+
   return (
     <>
       <Head>
@@ -31,12 +34,14 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Provider store={store}>
-        <ThemeProvider theme={theme}>
-          <Notification />
-          <Component {...pageProps} />
-        </ThemeProvider>
-      </Provider>
+      <RollbarProvider config={rollbarConfig}>
+        <ReduxProdvider store={store}>
+          <ThemeProvider theme={theme}>
+            <Notification />
+            <Component {...pageProps} />
+          </ThemeProvider>
+        </ReduxProdvider>
+      </RollbarProvider>
     </>
   );
 }

@@ -1,7 +1,7 @@
 import { RootState } from "@/services/redux/store";
 import { createSelector, createSlice } from "@reduxjs/toolkit";
 import { Country } from "@/declarations/store";
-import { countries } from "@/constants/index";
+import { countries } from "@/configs/index";
 
 export interface UiAppState {
   country: Country;

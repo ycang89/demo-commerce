@@ -18,6 +18,7 @@ const Home: NextPage = () => {
   return (
     <Layout>
       <Grid container spacing={4} justifyContent="center">
+        <span onClick={() => window.onerror("TestError: Hello world", window.location.href)}>Error</span>
         {isLoadingProducts ? (
           <CircularProgress />
         ) : products.length > 0 ? (
