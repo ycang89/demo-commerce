@@ -1,3 +1,8 @@
+## Prerequisites
+    - Node - v10.16.0
+    - NPM - 6.9.0
+    - Yarn - 1.19.2
+
 ## Features
     - Typescript
     - Nextjs
