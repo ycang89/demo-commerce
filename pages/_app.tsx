@@ -6,8 +6,6 @@ import { store } from "@/services/redux/store";
 import { Provider as ReduxProdvider } from "react-redux";
 import Notification from "@/components/Notification";
 import eventEmitter from "@/services/eventEmitter";
-import { Provider as RollbarProvider } from "@rollbar/react";
-import rollbarConfig from '@/configs/rollbar';
 
 eventEmitter.getInstance();
 
@@ -34,14 +32,12 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <RollbarProvider config={rollbarConfig}>
-        <ReduxProdvider store={store}>
-          <ThemeProvider theme={theme}>
-            <Notification />
-            <Component {...pageProps} />
-          </ThemeProvider>
-        </ReduxProdvider>
-      </RollbarProvider>
+      <ReduxProdvider store={store}>
+        <ThemeProvider theme={theme}>
+          <Notification />
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </ReduxProdvider>
     </>
   );
 }
