@@ -4,6 +4,7 @@
     - Material UI
     - Redux (Redux RTK & Query)
     - Cypress
+    - LogRocket
 
 ## File Structure
     ├── components              # reusable UI components
